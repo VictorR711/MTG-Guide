@@ -243,7 +243,11 @@ async function cargarCarta(nombre) {
         return cache[nombre];
     }
 
-    const respuesta = await fetch(`${API}/cards/named?fuzzy=${encodeURIComponent(nombre)}`);
+    // "set/number" (e.g. "clb/284") loads one exact printing; otherwise search by name
+    const url = nombre.includes("/")
+        ? `${API}/cards/${nombre}`
+        : `${API}/cards/named?fuzzy=${encodeURIComponent(nombre)}`;
+    const respuesta = await fetch(url);
 
     if (!respuesta.ok) {
         throw new Error("No se pudo cargar la carta");
