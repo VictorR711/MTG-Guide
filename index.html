@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Beginner's Guide to Magic: The Gathering</title>
+    <meta
+      name="description"
+      content="Complete guide to getting started in Magic: The Gathering: rules, colors, card types, the stack, formats and a land calculator.">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;800&family=Crimson+Pro:ital,wght@0,400;0,600;1,400&display=swap"
+      rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+      <div class="container">
+        <a class="navbar-brand d-flex align-items-center gap-2" href="#inicio">
+          <img src="assets/logo.svg" alt="Magic: The Gathering" height="38" onerror="this.outerHTML='<b>Magic</b>'">
+          <span class="brand-guia">Guide</span>
+        </a>
+        <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#menu" aria-label="Open menu">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="menu">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Start here</a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#fundamentos">Basics</a></li>
+                <li><a class="dropdown-item" href="#anatomia">Anatomy of a card</a></li>
+                <li><a class="dropdown-item" href="#reglas">Golden rules</a></li>
+              </ul>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">The cards</a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#colores">The five colors</a></li>
+                <li><a class="dropdown-item" href="#tipos">Card types</a></li>
+                <li><a class="dropdown-item" href="#habilidades">Key abilities</a></li>
+              </ul>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">How to play</a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#turno">Your turn</a></li>
+                <li><a class="dropdown-item" href="#pila">The stack (spells)</a></li>
+                <li><a class="dropdown-item" href="#formatos">Formats</a></li>
+              </ul>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Tools</a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#calculadora">Land calculator</a></li>
+                <li><a class="dropdown-item" href="#buscador">Card search</a></li>
+                <li><a class="dropdown-item" href="#recursos">Resources</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <header id="inicio" class="hero">
+      <div class="container text-center">
+        <h1 class="visually-hidden">Magic: The Gathering</h1>
+        <img
+          src="assets/logo.svg"
+          alt=""
+          class="hero-logo"
+          onerror="this.outerHTML='<p class=hero-fallback>Magic: The Gathering</p>'">
+        <p class="lead mx-auto">
+          A beginner's guide to the world's oldest trading card game (1993). Learn the rules, the colors and how to
+          build your first deck.
+        </p>
+        <div class="wheel" id="wheel" role="group" aria-label="The five colors of mana"></div>
+        <div class="d-flex flex-wrap justify-content-center gap-2 mt-4">
+          <a class="btn btn-gold" href="#fundamentos">I'm new</a>
+          <a class="btn btn-outline-gold" href="#colores">Pick a color</a>
+          <a class="btn btn-outline-gold" href="#calculadora">Build my deck</a>
+        </div>
+      </div>
+    </header>
+    <main class="container">
+      <section id="fundamentos" class="py-5">
+        <h2>Basics</h2>
+        <p class="sub">The four concepts that make everything else make sense.</p>
+        <div class="row g-4">
+          <div class="col-md-6">
+            <div class="panel">
+              <h3>You are a Planeswalker</h3>
+              <p>
+                Every player is a wizard who travels between worlds. Your deck is your arsenal: spells, creatures and
+                lands. You start with <b>20 life</b> (40 in Commander) and whoever brings the opponent to 0 wins.
+              </p>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="panel">
+              <h3>The deck is your strategy</h3>
+              <p>
+                Before playing, you build your own deck: <b>60 cards</b> minimum (100 in Commander). You can only
+                include up to 4 copies of the same card, and basic lands have no limit.
+              </p>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="panel">
+              <h3>Mana is energy</h3>
+              <p>
+                It's produced by <b>lands</b>. You play one per turn and tap it to pay costs. Each basic land gives one
+                color: Plains (white), Island (blue), Swamp (black), Mountain (red) and Forest (green).
+              </p>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="panel">
+              <h3>Zones of the game</h3>
+              <p>
+                <b>Library</b> (your deck), <b>hand</b>, <b>battlefield</b> (what's in play),
+                <b>graveyard</b> (used cards) and <b>exile</b> (cards removed from the game).
+              </p>
+            </div>
+          </div>
+        </div>
+        <h3 id="anatomia" class="mt-5">Anatomy of a card</h3>
+        <div class="row g-4 align-items-center">
+          <div class="col-md-4 text-center">
+            <div class="mtg" data-card="Serra Angel"></div>
+          </div>
+          <div class="col-md-8">
+            <ol class="legend">
+              <li><b>Name:</b> top left.</li>
+              <li>
+                <b>Mana cost:</b> top right. The symbols show the color; a number is mana of any type.
+              </li>
+              <li><b>Illustration:</b> the art in the center.</li>
+              <li>
+                <b>Type line:</b> says whether it's a creature, sorcery, etc., and its subtype (for example, "Creature —
+                Angel").
+              </li>
+              <li>
+                <b>Text box:</b> the abilities. Below that, the italic text is just flavor and doesn't affect the
+                game.
+              </li>
+              <li>
+                <b>Power/Toughness:</b> bottom right, creatures only. Power is the damage it deals;
+                toughness is how much damage it can take before dying.
+              </li>
+            </ol>
+          </div>
+        </div>
+      </section>
+      <section id="reglas" class="py-5 band-full">
+        <h2>Golden rules</h2>
+        <div class="row g-3">
+          <div class="col-md-6 col-lg-4">
+            <div class="regla">
+              <b>Rule 1: If a card contradicts the rules, the card wins.</b>
+              <span>The card's text takes priority over the general rules.</span>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4">
+            <div class="regla">
+              <b>Rule 2: One land per turn.</b>
+              <span>You can only play one, unless a card says otherwise.</span>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4">
+            <div class="regla">
+              <b>Rule 3: Pay the full cost.</b>
+              <span>You can't cast a spell if you can't pay its entire cost.</span>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4">
+            <div class="regla">
+              <b>Rule 4: A creature can't attack the turn it arrives.</b>
+              <span>It has "summoning sickness," unless it has Haste.</span>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4">
+            <div class="regla">
+              <b>Rule 5: No cards, you lose.</b>
+              <span>If you have to draw from an empty deck, you lose the game.</span>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4">
+            <div class="regla">
+              <b>Rule 6: Anything that says "may" is optional.</b>
+              <span>Anything that says "must" is not.</span>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="colores" class="py-5">
+        <h2>The five colors</h2>
+        <p class="sub">Each color has its own philosophy. Almost every deck uses one or two.</p>
+        <ul class="nav nav-pills mb-4 gap-2" id="tabs-color" role="tablist"></ul>
+        <div class="tab-content" id="contenido-color"></div>
+      </section>
+      <section id="tipos" class="py-5 band-full">
+        <h2>Card types</h2>
+        <p class="sub">Open each type to see what it does and an example card.</p>
+        <div class="accordion" id="acc-tipos"></div>
+      </section>
+      <section id="habilidades" class="py-5">
+        <h2>Key abilities</h2>
+        <p class="sub">Keywords you'll see on many creatures.</p>
+        <div class="row g-3" id="habs"></div>
+      </section>
+      <section id="turno" class="py-5 band-full">
+        <h2>Your turn, phase by phase</h2>
+        <div class="row g-3">
+          <div class="col-6 col-md-4">
+            <div class="fase">
+              <small>Phase 1</small>
+              <b>Beginning</b>
+              You untap your cards, resolve upkeep effects and draw a card.
+            </div>
+          </div>
+          <div class="col-6 col-md-4">
+            <div class="fase">
+              <small>Phase 2</small>
+              <b>Main</b>
+              You play a land and cast creatures, sorceries, artifacts and enchantments.
+            </div>
+          </div>
+          <div class="col-6 col-md-4">
+            <div class="fase">
+              <small>Phase 3</small>
+              <b>Combat</b>
+              You declare attackers; the opponent declares blockers; damage is dealt.
+            </div>
+          </div>
+          <div class="col-6 col-md-4">
+            <div class="fase">
+              <small>Phase 4</small>
+              <b>Second main</b>
+              Another chance to cast spells or play your land if you didn't earlier.
+            </div>
+          </div>
+          <div class="col-12 col-md-8">
+            <div class="fase">
+              <small>Phase 5</small>
+              <b>End</b>
+              "Until end of turn" effects wear off. If you have more than 7 cards, you discard down to
+              7.
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="pila" class="py-5">
+        <h2>The stack: how spells resolve</h2>
+        <div class="row g-4">
+          <div class="col-lg-6">
+            <p>
+              When you cast a spell, it doesn't happen instantly: it goes onto the <b>stack</b>. The opponent can
+              respond with an instant, and that response resolves <b>first</b>. The last card in is the first one to
+              resolve.
+            </p>
+            <p>
+              <b>Sorceries</b> can only be played during your main phase. <b>Instants</b> can be played at any time,
+              which is why they let you pull off surprises.
+            </p>
+          </div>
+          <div class="col-lg-6">
+            <div class="pila">
+              <div>3. Opponent's counterspell <i>(resolves first)</i></div>
+              <div>2. Your Lightning Bolt in response</div>
+              <div>1. Opponent's original spell <i>(resolves last)</i></div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="formatos" class="py-5 band-full">
+        <h2>Formats</h2>
+        <div class="table-responsive">
+          <table class="table table-dark align-middle tabla">
+            <thead>
+              <tr>
+                <th>Format</th>
+                <th>Deck</th>
+                <th>Life</th>
+                <th>Best for</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><b>Commander</b></td>
+                <td>100 cards, 1 commander, no duplicates</td>
+                <td>40</td>
+                <td>The most social. Games of 3 to 4 players.</td>
+              </tr>
+              <tr>
+                <td><b>Standard</b></td>
+                <td>60 cards, recent sets only</td>
+                <td>20</td>
+                <td>Competitive play and MTG Arena.</td>
+              </tr>
+              <tr>
+                <td><b>Modern</b></td>
+                <td>60 cards, sets from 2003 onward</td>
+                <td>20</td>
+                <td>Competitive play with more variety.</td>
+              </tr>
+              <tr>
+                <td><b>Draft / Sealed</b></td>
+                <td>40 cards, from opened packs</td>
+                <td>20</td>
+                <td>Everyone starts on equal footing.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+      <section id="calculadora" class="py-5">
+        <h2>Land calculator</h2>
+        <p class="sub">A starting point for your deck's mana base.</p>
+        <div class="panel">
+          <div class="row g-3">
+            <div class="col-md-4">
+              <label class="form-label">Format</label>
+              <select id="c-formato" class="form-select">
+                <option value="60">Constructed (60)</option>
+                <option value="40">Draft / Sealed (40)</option>
+                <option value="100">Commander (100)</option>
+              </select>
+            </div>
+            <div class="col-12 col-md-8">
+              <label class="form-label">Mana symbols of each color in your deck</label>
+              <div class="row g-2" id="c-colores"></div>
+            </div>
+          </div>
+          <div id="c-res" class="mt-3"></div>
+        </div>
+      </section>
+      <section id="buscador" class="py-5 band-full">
+        <h2>Card search</h2>
+        <p>The data comes from the public Scryfall API. Type the card name.</p>
+        <form id="form-buscar" class="row g-2 mb-3">
+          <div class="col-md-5">
+            <input id="q" class="form-control" placeholder="E.g. Lightning Bolt, Sol Ring" required>
+          </div>
+          <div class="col-6 col-md-2">
+            <select id="f-color" class="form-select">
+              <option value="">Any color</option>
+              <option value="w">White</option>
+              <option value="u">Blue</option>
+              <option value="b">Black</option>
+              <option value="r">Red</option>
+              <option value="g">Green</option>
+            </select>
+          </div>
+          <div class="col-6 col-md-3">
+            <select id="f-tipo" class="form-select">
+              <option value="">Any type</option>
+              <option>creature</option>
+              <option>instant</option>
+              <option>sorcery</option>
+              <option>enchantment</option>
+              <option>artifact</option>
+              <option>planeswalker</option>
+              <option>land</option>
+            </select>
+          </div>
+          <div class="col-md-2 d-grid">
+            <button class="btn btn-gold">Search</button>
+          </div>
+        </form>
+        <div id="estado" class="mb-3" aria-live="polite"></div>
+        <div id="resultados" class="row g-3"></div>
+      </section>
+      <section id="recursos" class="py-5">
+        <h2>Resources</h2>
+        <div class="row g-3">
+          <div class="col-md-4">
+            <div class="panel">
+              <h3>Play for free</h3>
+              <p>
+                MTG Arena (PC and mobile) and its built-in tutorial. To play in person, ask for a Starter Kit at your
+                local game store.
+              </p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="panel">
+              <h3>Official rules</h3>
+              <p>
+                <a href="https://magic.wizards.com/es/formats/commander">Official Commander page</a> on the Wizards of
+                the Coast website.
+              </p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="panel">
+              <h3>Data and images</h3>
+              <p><a href="https://scryfall.com/docs/api">Scryfall API</a> for cards and mana symbols.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="py-4">
+      <div class="container small">
+        <p class="mb-1">
+          Fan site for educational purposes. Cards and symbols: <a href="https://scryfall.com">Scryfall</a>. Logo:
+          Wikimedia Commons.
+        </p>
+        <p class="mb-0">
+          Magic: The Gathering is a trademark of Wizards of the Coast. This site is not affiliated with or endorsed
+          by Wizards of the Coast.
+        </p>
+      </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
